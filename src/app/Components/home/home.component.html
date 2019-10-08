@@ -1,0 +1,64 @@
+<div class="d-flex flex-column flex-md-row align-item-center p-3 px-md-9 md-10 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">USERS LIST</h5>
+
+   
+      
+</div>
+
+<div class="container" style="width: 60%" >
+    <form [formGroup]="myForm">
+        <h5 style="text-align: center ; margin-top: 10px">Enter Users</h5>
+        <div class="row">
+            <div class="col-md-6">
+                    <input type="text" #add class="form-control"
+                    formControlName="fullName"
+                    [ngClass]="{'is-invalid': myForm.get('fullName').errors && myForm.get('fullName').touched, 'is-valid':myForm.get('fullName').valid}">
+                   
+                   
+            </div>
+        
+     
+                <div class="col-md-6">
+                      
+    <button class="btn btn-block" (click)="adduser(add)"
+    style="background-color: #21d192 ;"  [disabled]="!myForm.valid">ADD USER</button>
+                </div>
+            </div>
+        </form>
+            </div>
+ 
+  
+            <div class="container" style="width: 60%" >
+
+<br>
+  <ul *ngFor="let user of users" class="list-group" >
+        <li class="list-group-item">  {{user.name}}
+   
+                <button class="btn btn-danger"
+                style=" 
+                float: right; text-align: center"
+                mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                placement="top"
+                (confirm)="deletuser(users.name)"
+                (cancel)="cancelClicked=true">Delete</button>
+               
+        </li>
+        
+      </ul>
+  </div>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+

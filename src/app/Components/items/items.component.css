@@ -1,0 +1,38 @@
+.card {
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  
+
+}
+a{
+    text-decoration: none;
+    color: black
+}
+button{background-color: none}
+
+.card img {
+    height: auto;
+    width: 75%;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 20px
+  }
+
+  .modimg{
+    height: auto;
+    width: 75%;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 5px 
+  }
+
+.container {
+    padding: 5px 16px;
+}
+
+.btn-block{
+    color: #FFFFFF;
+    border-radius: 40px;
+ 
+   }

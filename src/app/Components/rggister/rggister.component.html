@@ -1,0 +1,92 @@
+
+    <section class="form">
+
+
+        <div class="container">
+          <img src="../../../assets/img/user.png" style="width: 20% ; position:relative;left:40%; margin-top:10px">
+        </div>
+  
+  
+  
+        <div class="container" style="width: 60%" >
+  
+      <form [formGroup]="myForm">
+        <div class="form-group">
+                <label>Full Name</label>
+                  <input type="text" placeholder="Your Full Name" class="form-control"
+                formControlName="fullName"
+                [ngClass]="{'is-invalid': myForm.get('fullName').errors && myForm.get('fullName').touched, 'is-valid':myForm.get('fullName').valid}">
+  
+                <ng-container *ngFor="let error of error_messages.fullName">
+                    <div *ngIf="myForm.get('fullName').hasError(error.type) && myForm.get('fullName').touched" class="errorMessage">
+                      {{error.message}}
+                    </div>
+                </ng-container>
+  
+  
+  
+                <br>
+                <label>Birthday</label>
+                  <input type="date"  class="form-control"
+                  formControlName="birthday"
+                  [ngClass]="{'is-invalid': myForm.get('birthday').errors && myForm.get('birthday').touched, 'is-valid':myForm.get('birthday').valid}">
+                  <ng-container *ngFor="let error of error_messages.birthday">
+                      <div *ngIf="myForm.get('birthday').hasError(error.type) && myForm.get('birthday').touched" class="errorMessage">
+                        {{error.message}}
+                      </div>
+                  </ng-container><br>
+  
+                  
+                <label>Email</label>
+                   <input type="email" placeholder="your Email" class="form-control"
+                   formControlName="email"
+                   [ngClass]="{'is-invalid': myForm.get('email').errors && myForm.get('email').touched, 'is-valid':myForm.get('email').valid}">
+  
+            <ng-container *ngFor="let error of error_messages.email">
+                    <div *ngIf="myForm.get('email').hasError(error.type) && myForm.get('email').touched" class="errorMessage">
+                      {{error.message}}
+                    </div>
+                </ng-container>   <br>
+  
+  
+                  
+                <label>Phone Number</label>
+                    <input type="text" placeholder="your Phone Number" class="form-control"
+                    formControlName="phone" 
+                    [ngClass]="{'is-invalid': myForm.get('phone').errors && myForm.get('phone').touched, 'is-valid':myForm.get('phone').valid}">
+                    <ng-container *ngFor="let error of error_messages.phone">
+                        <div *ngIf="myForm.get('phone').hasError(error.type) && myForm.get('phone').touched" class="errorMessage">
+                          {{error.message}}
+                        </div>
+                    </ng-container>
+                    <br>
+  
+  
+  
+                <label>Location/Adress</label>
+                     <input type="text" placeholder="Your Location" class="form-control"
+                     formControlName="address"
+                     [ngClass]="{'is-invalid': myForm.get('address').errors && myForm.get('address').touched, 'is-valid':myForm.get('address').valid}">
+  
+                     <ng-container *ngFor="let error of error_messages.address">
+                        <div *ngIf="myForm.get('address').hasError(error.type) && myForm.get('address').touched" class="errorMessage">
+                          {{error.message}}
+                        </div>
+                    </ng-container>
+                     <br>
+                     <br>
+  
+  
+  
+  
+  
+  
+  
+                <button class="btn btn-block" routerLink="/home"  [disabled]="!myForm.valid" style="background-color: #21d192 ; width: 100%" >Next</button>
+            
+            </div>
+          </form>
+    </div>
+        
+    </section>
+  

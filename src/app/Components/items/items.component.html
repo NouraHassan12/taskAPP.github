@@ -1,0 +1,102 @@
+
+
+
+
+ <div *ngFor="let person of persons;let i = index">
+
+    <div class="container" style="width: 80%">
+        <button (click)="openmodel(template)" style="background: none ;border:white solid 1px">
+    <div  class="card" >   
+      <div class="row">
+          <div class="col-md-4">
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+             </div>
+    
+        <div class="col-md-4">
+            <div style="margin-left: 15px ; margin-top: 30px">
+      <h4><b>{{person.name}}</b></h4> 
+      <h4><b> MEMBER ID: {{i}}</b></h4> 
+      <p style="color:#21d192">{{person.title}}</p> 
+     <p style="color:lightgrey">  <i class="fas fa-map-marker-alt"></i>{{person.location}} </p> 
+    </div>
+    </div>
+            <div class="col-md-4">
+                <div style="margin-top: 40px ;">
+                        <h6 style="text-align: center"><b>{{person.rate}}</b></h6> 
+                    <i class="far fa-star" style="color: orange"></i>
+                    <i class="far fa-star" style="color: orange"></i>
+                    <i class="far fa-star" ></i>
+                   
+                </div>
+        </div>
+        
+</div>
+</div>
+</button>
+  </div>
+  </div> 
+
+  <ng-template #template>
+      <div class="modal-header">
+          <button type="button" class="close pull-right" aria-label="close"
+           (click)="modalRef.hide()">
+           <span aria-hidden="true">&times;</span>
+
+          </button>
+
+          <div class="modal-body">
+         
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                      <h3 style="text-align: center">Give Feedback</h3>
+                    </div>
+                </div>
+<br>
+<br>
+
+                <div class="row">
+                        <div class="col-md-6">
+                                <img  class="modimg" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                        </div>
+<br>
+                        <div class="col-md-6" style="margin-top: 20px">
+                                <h6><b>MEMBER NAME</b></h6> 
+                                <p style="color: #21d192">MEMBER POSITION</p> 
+                              </div>
+                    </div>
+
+
+<br>
+                    <div class="row">
+                            <div class="col-md-12" style="display:flex ; justify-content:center;">
+                                    <i class="far fa-star" style="color: orange ;font-size: 30px"></i>
+                                    <i class="far fa-star" style="color: orange ;font-size: 30px"></i>
+                                      <i class="far fa-star" style="color: orange ;font-size: 30px"></i>
+                                        <i class="far fa-star" style="font-size: 30px"></i>
+                                        <i class="far fa-star" style="font-size: 30px"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-md-12">
+                              <label>feedback</label>
+                              
+                    <textarea class="form-control" rows="3" placeholder="Write Your Feedback"></textarea>
+                    
+                                </div>
+                            </div>
+
+   <br>
+                            <div class="row">
+                                    <div class="col-md-12">
+                               
+                                  <button class="btn btn-block" style="background-color: #21d192">Send</button>
+                        
+                                    </div>
+                                </div>
+                
+            </div>
+          </div>
+      </div>
+  </ng-template>
